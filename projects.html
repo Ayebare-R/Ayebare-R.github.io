@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Ayebare - Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        /* Custom styles for the projects page content */
+        #projects {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - 10vh); /* Full height minus nav */
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .redirect-btn {
+            font-weight: 600;
+            transition: all 300ms ease;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background: none;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .redirect-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">Richard Ayebare</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo">Richard Ayebare</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="projects.html" onclick="toggleMenu()" class="active">Projects</a></li>
+                <li><a href="resume.html" onclick="toggleMenu()">Resume</a></li>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Section -->
+    <section id="projects">
+        <h1 class="title">Find my latest projects on my resume</h1>
+        <button class="redirect-btn" onclick="location.href='resume.html'">
+            Click Here
+        </button>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>

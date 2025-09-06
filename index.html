@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Ayebare - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">Richard Ayebare</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hamburger Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo">Richard Ayebare</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="resume.html" onclick="toggleMenu()">Resume</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profile">
+        <div class="profile-container">
+            <div class="profile-pic-container">
+                <img src="assets/photo.jpeg" alt="Richard Ayebare" class="profile-pic">
+            </div>
+            <div class="profile-content">
+                <p class="section__text__p1">Hello, I'm</p>
+                <h1 class="title">Richard Ayebare 👋</h1>
+                <div class="profile-text">
+                    <p class="profile-paragraph">
+                        I'm an MIT undergraduate studying Computer Science and Economics, 
+                        with a strong focus on systems and low-level software. 
+                        My core drive is building useful, tangible products.
+                    </p>
+                    <p class="profile-paragraph">
+                        I have a strong interest in startups (see my resume for details) and
+                        I'm always looking for challenging projects/opportunities to learn new technologies.
+                        Feel free to check out my work to see what I've been creating 😊
+                    </p>
+                </div>
+                <div class="contact-section">
+                    <p class="contact-text">Feel free to reach out:</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/Ayebare-R" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/richarddanielayebare/" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:ard256@mit.edu" class="contact-link">
+                            <i class="fas fa-envelope"></i> ard256@mit.edu
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>

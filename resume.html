@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Ayebare - Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        /* Custom styles for the resume page */
+        body, html {
+            overflow: hidden; /* Prevent scrolling on the main page */
+        }
+
+        #resume {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - 10vh); /* Adjust based on nav height */
+            gap: 1.5rem;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .download-btn {
+            font-weight: 600;
+            transition: all 300ms ease;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background: none;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .download-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .resume-preview-container {
+            width: 100%;
+            max-width: 900px; /* Max width for large screens */
+            height: 75vh; /* Responsive height */
+            flex-grow: 1; /* Allow container to grow */
+        }
+
+        .resume-preview {
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">Richard Ayebare</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo">Richard Ayebare</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="resume.html" onclick="toggleMenu()" class="active">Resume</a></li>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Resume Preview Section -->
+    <section id="resume">
+        <button class="download-btn" onclick="window.open('./assets/Richard_Ayebare_resume.pdf')">
+            Download PDF
+        </button>
+        <div class="resume-preview-container">
+            <iframe src="./assets/Richard_Ayebare_resume.pdf" class="resume-preview" title="Richard Ayebare's Resume"></iframe>
+        </div>
+    </section>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
